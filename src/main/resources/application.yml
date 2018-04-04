@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: sail-mgmt-api
+  profiles:
+    active: dev
+  http:
+    multipart:
+      max-file-size: 600Mb
+      max-request-size: 600Mb
+    
+
+mybatis:
+        mapperLocations: classpath*:cn/south/**/dao/**/*Mapper.xml
+        config-location: classpath:mybatis-config.xml
+
+login:
+  password: 111111
+  
+
+

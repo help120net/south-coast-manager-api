@@ -1,0 +1,42 @@
+auth-server: http://localhost:8085/uaa
+server:
+  port: 8080
+  session: 
+    timeout: -1
+spring:
+  datasource:
+    url: jdbc:mysql://10.0.20.170:3306/dev_healthmall_sail?useUnicode=true&characterEncoding=utf-8
+    username: dev_healthmall_sail
+    password: PNB4SIwR2MSHfXcGOB98fu370
+    driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20  
+    filters: stat,wall,log4j  
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000   
+  data:
+    redis:
+      maxTotal: 50
+      maxIdle: 10
+      numTestsPerEvictionRun: 1024
+      timeBetweenEvictionRunsMillis: 30000
+      minEvictableIdleTimeMillis: 1800000
+      softMinEvictableIdleTimeMillis: 10000
+      maxWaitMillis: 1500
+      testOnBorrow: true
+      testWhileIdle: true
+      blockWhenExhausted: false
+      maxRedirects: 5
+      clusters: 10.0.20.94:30301,10.0.20.94:30302,10.0.20.94:30303,10.0.20.94:30304,10.0.20.94:30305,10.0.20.94:30306
+
+  
+
